@@ -34,11 +34,14 @@ BowlingGame.prototype.score = function() {
 
 	for (var frame = 0; frame < 10; frame++) {
         if (isStrike()) {
-            //TODO
+            score += 10 + strikeBonus();
+            frameIndex++;
         } else if (isSpare()) {
-           //TODO
+            score += 10 + spareBonus();
+            frameIndex += 2;
         } else {
-            //TODO 
+            score += sumOfBallsInFrame();
+            frameIndex += 2;
         }
     }
     return score;

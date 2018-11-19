@@ -315,17 +315,14 @@ BowlingGame.prototype.score = function() {
 	}
 
 	for (var frame = 0; frame < 10; frame++) {
-		if (isStrike()) {
-			score += 10 + strikeBonus();
-			frameIndex++;
-		} else if (isSpare()) {
-			score += 10 + spareBonus();
-			frameIndex += 2;
-		} else {
-			score += sumOfBallsInFrame();
-			frameIndex += 2;
-		}
-	}
+        if (isStrike()) {
+            //TODO
+        } else if (isSpare()) {
+           //TODO
+        } else {
+            //TODO 
+        }
+    }
 	return score;
 };
 ```
