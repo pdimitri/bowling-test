@@ -28,6 +28,27 @@ In the tenth frame a player who rolls a spare or strike is allowed to roll the e
 balls to complete the frame.  However no more than three balls can be rolled in
 tenth frame.
 
+## Quick design session
+
+One game  
+A game has 10 frames  
+A frame has one or two rolls  
+The tenth frame has two or three rolls. It's different from all the other frames. But this rule is not modelled in this code  
+The score function must iterate through all the frames, and calculate all their scores  
+The score for a spare or a strike depends on the frames successor
+
+
+## Install and configure *karma test-runner*
+
+```
+npm install
+``` 
+
+* Just start the karma test-runner by typing:
+
+```
+npm run test
+```
 
 ## The requirements
 
@@ -38,14 +59,6 @@ tenth frame.
 		- called only after the very end of the game. Returns total score of the game.
 
 
-## Quick design session
-
-One game  
-A game has 10 frames  
-A frame has one or two rolls  
-The tenth frame has two or three rolls. It's different from all the other frames  
-The score function must iterate through all the frames, and calculate all their scores  
-The score for a spare or a strike depends on the frames successor
 
 
 ## Begin
@@ -60,25 +73,6 @@ describe("BowlingGame", function() {
 	
 });
 ```
-
-Install and configure *karma test-runner*
-
-```
-npm install -g karma
-npm install -g karma-mocha
-npm install -g karma-chai
-karma init
-
-	Testing framework: mocha
-	Require.js: no
-	Capture browser: PhantomJS
-	Source and test files: *.js
-	Excluded:
-	Run tests on change: yes
-```
-
-Open the created configuration file and change `frameworks: ['mocha'],` to `frameworks: ['mocha', 'chai'],`.  
-Kick-start the test runner typing `karma start` and hitting `ENTER`
 
 
 ## The first test
